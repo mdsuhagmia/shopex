@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../components/Container'
-import not from '../assets/notFound.png'
+import not from '../assets/notfound.png'
 import { Link } from 'react-router-dom'
 
 const NotFound = () => {
