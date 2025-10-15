@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@theme{
+  --font-jose: "Josefin Sans", sans-serif;
+  --font-lat: "Lato", sans-serif;
+}
+
+.banSlick .slick-dots{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 6%;
+  height: 90px;
+  width: 4px;
+  background-color: rgb(176, 176, 176);
+}
+.banSlick .slick-dots li{
+  padding-bottom: 10px;
+}
+.banSlick .slick-dots li button{
+  color: transparent;
+  margin-left: -20px;
+}
+.banSlick .slick-dots li.slick-active button{
+  color: black;
+  font-size: 20px;
+  font: bold;
+}
+.banSlick .slick-dots li.slick-active{
+  width: 4px;
+  height: 30px;
+  background: #000;
+}
+
+.wo_clothing .slick-dots{
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex !important;
+  gap: 20px;
+}
+.wo_clothing .slick-dots li button{
+  color: transparent;
+  height: 3px;
+  width: 25px;
+  background-color: rgba(211, 210, 210, 0.794);
+}
+.wo_clothing .slick-dots li.slick-active button{
+  height: 3px;
+  width: 25px;
+  background-color: rgb(255, 0, 0);
+}
+
+.ourall_pro .slick-dots{
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex !important;
+  gap: 10px;
+}
+.ourall_pro .slick-dots li button{
+  color: transparent;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: rgba(161, 133, 255, 0.794);
+}
+.ourall_pro .slick-dots li.slick-active button{
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+}
