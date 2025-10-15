@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../components/Container'
-import notFound from '../assets/notFound.png'
+import not from '../assets/notFound.png'
 import { Link } from 'react-router-dom'
 
 const NotFound = () => {
@@ -9,7 +9,7 @@ const NotFound = () => {
       <Container>
         <div className='w-full sm:w-1/2 mx-auto'>
           <div>
-            <img src={notFound} alt="" />
+            <img src={not} alt="" />
           </div>
           <div className='text-center'>
             <Link to={"/"}
