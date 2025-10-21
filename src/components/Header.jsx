@@ -19,14 +19,14 @@ const Header = () => {
           <div>
             <ul className='flex items-center gap-x-6'>
               <li>
-                <Link to={"/"} target='_top' className="text-[14px] font-jose font-bold hover:text-violet-600 text-violet-950">
+                <NavLink to={"/"} target='_top' className={({isActive})=> `text-[14px] font-jose font-bold hover:text-violet-600 ${isActive ? "text-red-500" : "text-violet-950" }`}>
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to={"/products"} target='_top' className="text-[14px] font-jose font-bold hover:text-violet-600 text-violet-950">
+                <NavLink to={"/products"} target='_top' className={({isActive})=> `text-[14px] font-jose font-bold hover:text-violet-600 ${isActive ? "text-red-500" : "text-violet-950" }`}>
                   Products
-                </Link>
+                </NavLink>
               </li>
               <li>
                 <NavLink to={"/blog"} target='_top' className={({isActive})=> `text-[14px] font-jose font-bold hover:text-violet-600 ${isActive ? "text-red-500" : "text-violet-950" }`}>
