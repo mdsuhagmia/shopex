@@ -22,7 +22,7 @@ const BanDown = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {cateShow.map((item) => (
                 <div key={item.id} className="bg-blue-500 rounded-[8px] shadow ">
-                  <Link>
+                  <Link to={"/products"}>
                     <img src={item.image} alt={item.title}
                     className="w-full h-52 object-contain px-6 py-4 bg-gra-100 bg-gray-200 rounded-t-[5px]" />
                   </Link>
