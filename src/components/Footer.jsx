@@ -19,7 +19,7 @@ const Footer = () => {
             <a href="#" className="hover:text-white"><FaLinkedinIn /></a>
           </div>
         </div>
-        <div>
+        <div className='md:w-30 mx-auto'>
           <h3 className="text-white font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2">
             <li><a href="/" className="hover:text-white">Home</a></li>

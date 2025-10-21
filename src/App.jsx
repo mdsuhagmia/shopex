@@ -8,6 +8,10 @@ import AboutUs from "./pages/AboutUs"
 import Contact from "./pages/Contact"
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
+import ProductDetails from "./components/ProductDetails"
+import Cart from "./pages/Cart"
+import { ToastContainer } from "react-toastify"
+import Checkout from "./pages/CheckOut"
 
 
 let routing = createBrowserRouter(createRoutesFromElements(
@@ -15,6 +19,9 @@ let routing = createBrowserRouter(createRoutesFromElements(
     <Route element={<RootLayout />}>
       <Route path="/" element={<Home />}></Route>
       <Route path="/products" element={<Products />}></Route>
+      <Route path="/products/:id" element={<ProductDetails/>}></Route>
+      <Route path="/cart" element={<Cart/>}></Route>
+      <Route path="/checkout" element={<Checkout />}></Route>
       <Route path="/blog" element={<Blog />}></Route>
       <Route path="/aboutus" element={<AboutUs />}></Route>
       <Route path="/contact" element={<Contact />}></Route>
@@ -30,6 +37,7 @@ function App() {
   return (
     <div>
       <RouterProvider router={routing}></RouterProvider>
+      <ToastContainer />
     </div>
   )
 }
