@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '../components/Container'
 import { useSelector } from 'react-redux'
 
-const Checkout = () => {
+const CheckOut = () => {
   let rdata = useSelector((state)=>state.product.cartItem)
   let {totalPrice, totalQunatity} = rdata.reduce((item, index)=>{
     item.totalPrice += index.price * index.qun
@@ -80,4 +80,4 @@ const Checkout = () => {
   )
 }
 
-export default Checkout
+export default CheckOut
