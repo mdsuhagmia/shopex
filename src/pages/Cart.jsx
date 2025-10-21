@@ -100,7 +100,7 @@ const Cart = () => {
                 </tr>
                 <tr>
                   <td colSpan="2" className="px-6 py-4 text-center">
-                    <Link to={"/checkout"} className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-500 transition font-semibold inline-block">
+                    <Link to={"/"} className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-500 transition font-semibold inline-block">
                       Process to Checkout
                     </Link>
                   </td>
