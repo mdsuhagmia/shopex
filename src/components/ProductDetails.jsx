@@ -2,10 +2,10 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Container from './Container'
-import { FaCartPlus, FaMinus, FaPlus, FaStar, FaStarHalfAlt } from 'react-icons/fa'
+import { FaCartPlus, FaStar, FaStarHalfAlt } from 'react-icons/fa'
 import { CiHeart, CiStar } from 'react-icons/ci'
-import { useDispatch, useSelector } from 'react-redux'
-import { addToCart, decrement, increment } from './slice/productSlice'
+import { useDispatch } from 'react-redux'
+import { addToCart } from './slice/productSlice'
 import { toast } from 'react-toastify'
 
 const ProductDetails = () => {
@@ -30,8 +30,6 @@ const ProductDetails = () => {
 
   let discount = singleProduct.price - 6
 
-  let rdata = useSelector((state)=>state.product.cartItem)
-
   let dispatch = useDispatch()
   let navigate = useNavigate()
 
@@ -42,8 +40,6 @@ const ProductDetails = () => {
       navigate("/cart")
     }, 1000);
   }
-
-let cartItem = rdata.find((item) => item.id === singleProduct.id);
 
 
   return (
@@ -70,30 +66,6 @@ let cartItem = rdata.find((item) => item.id === singleProduct.id);
                   <p className='text-[#d32530] font-bold font-jose line-through'>${singleProduct.price}</p>
                 </div>
                 <p className='text-[#262626] font-dms font-normal text-[16px]'>{singleProduct.description}</p>
-                <div className='pt-4'>
-                  <div className='flex items-center gap-x-6'>
-                    <h2 className='text-lg font-semibold font-jose'>Qunatity: </h2>
-                    <div className='flex items-center gap-x-6 border px-6 py-1 rounded-[5px]'>
-                      <button onClick={() => {
-                        if (cartItem) {
-                          dispatch(decrement(cartItem))
-                        }
-                      }}>
-                        <FaMinus className='text-2xl cursor-pointer' />
-                      </button>
-                        <h2 className='text-xl font-semibold'>{cartItem ? cartItem.qun : 0}</h2>
-                      <button onClick={() => {
-                        if (!cartItem) {
-                          dispatch(addToCart({ ...singleProduct, qun: 0 }))
-                        } else {
-                          dispatch(increment(cartItem))
-                        }
-                      }} className='cursor-pointer'>
-                        <FaPlus className='text-xl' />
-                      </button>
-                    </div>
-                  </div>
-                </div>
                 <div className='flex gap-x-2 sm:gap-x-6 pt-4'>
                   <div className='w-40 py-4'>
                     <div className='flex justify-between items-center cursor-pointer group border-2 border-[#0000001a] px-4 sm:px-6 py-1 rounded-[5px] hover:border-[#f01313]'>

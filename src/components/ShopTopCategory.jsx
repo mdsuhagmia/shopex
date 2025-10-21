@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Container from './Container'
 import { apiData } from './ContextApi'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const ShopTopCategory = () => {
 
@@ -11,9 +11,11 @@ const ShopTopCategory = () => {
   let [shopCategory2, setShopCategory2] = useState([])
   let [shopCategory3, setShopCategory3] = useState([])
 
+  let [sh, setSh] = useState([])
+
   useEffect(()=>{
 
-    // setShopCategory([...new Set(data.map((item)=>item.category))])
+    setSh([...new Set(data.map((item)=>item.category))])
     
     let cateSingle = data.filter((item)=>item.category === "men's clothing")
     setShopCategory(cateSingle)
@@ -32,8 +34,12 @@ const ShopTopCategory = () => {
     setShopCategory3(caeFil)
 
   },[data])
-
-  // console.log(shopCategory)
+   
+  let navigate = useNavigate()
+  let handleCate = (citem)=>{
+    let cateFill = data.filter((item)=>item.category === citem)
+    navigate('/products', { state: { cateData: cateFill, category: citem } })
+  }
 
   return (
     <section className='py-12 bg-gray-100'>
@@ -46,17 +52,20 @@ const ShopTopCategory = () => {
               {shopCategory3.map((item) => (
                 <div className='bg-white rounded-[5px] mb-2 shadow'>
                   <div className='bg-gray-200 rounded-t-[5px] flex justify-center'>
-                    <Link>
+                    <Link to={`/products/${item.id}`}>
                       <img src={item.image} alt="" className='h-40 py-4 px-4' />
                     </Link>
                   </div>
                   <div className='px-2 py-4'>
-                    <Link>
+                    <Link to={`/products/${item.id}`}>
                       <h4 className='text-[14px] font-semibold font-jose text-neutral-950 hover:underline'>{item.title}</h4>
                     </Link>
                   </div>
                 </div>
               ))}
+            </div>
+            <div onClick={() => handleCate("electronics")}>
+              <h2 className='text-xl font-semibold font-jose text-white cursor-pointer hover:text-gray-300 pt-2 inline-block'>See More</h2>
             </div>
           </div>
           <div className='bg-indigo-400 py-6 px-6 rounded-[5px]'>
@@ -65,17 +74,20 @@ const ShopTopCategory = () => {
               {shopCategory2.map((item) => (
                 <div className='bg-white rounded-[5px] mb-2 shadow'>
                   <div className='bg-gray-200 rounded-t-[5px] flex justify-center'>
-                    <Link>
+                    <Link to={`/products/${item.id}`}>
                       <img src={item.image} alt="" className='h-40 py-4 px-4' />
                     </Link>
                   </div>
                   <div className='px-2 py-4'>
-                    <Link>
+                    <Link to={`/products/${item.id}`}>
                       <h4 className='text-[14px] font-semibold font-jose text-neutral-950 hover:underline'>{item.title}</h4>
                     </Link>
                   </div>
                 </div>
               ))}
+            </div>
+            <div onClick={() => handleCate("jewelery")}>
+              <h2 className='text-xl font-semibold font-jose text-white cursor-pointer hover:text-gray-300 pt-2 inline-block'>See More</h2>
             </div>
           </div>
           <div className='bg-indigo-400 py-6 px-6 rounded-[5px] mt-6'>
@@ -84,17 +96,20 @@ const ShopTopCategory = () => {
               {shopCategory1.map((item) => (
                 <div className='bg-white rounded-[5px] mb-2 shadow'>
                   <div className='bg-gray-200 rounded-t-[5px] flex justify-center'>
-                    <Link>
+                    <Link to={`/products/${item.id}`}>
                       <img src={item.image} alt="" className='h-40 py-4 px-4' />
                     </Link>
                   </div>
                   <div className='px-2 py-4'>
-                    <Link>
+                    <Link to={`/products/${item.id}`}>
                       <h4 className='text-[14px] font-semibold font-jose text-neutral-950 hover:underline'>{item.title}</h4>
                     </Link>
                   </div>
                 </div>
               ))}
+            </div>
+            <div onClick={() => handleCate("women's clothing")}>
+              <h2 className='text-xl font-semibold font-jose text-white cursor-pointer hover:text-gray-300 pt-2 inline-block'>See More</h2>
             </div>
           </div>
           <div className='bg-indigo-400 py-6 px-6 rounded-[5px] mt-6'>
@@ -103,17 +118,20 @@ const ShopTopCategory = () => {
               {shopCategory.map((item) => (
                 <div className='bg-white rounded-[5px] mb-2 shadow'>
                   <div className='bg-gray-200 rounded-t-[5px] flex justify-center'>
-                    <Link>
+                    <Link to={`/products/${item.id}`}>
                       <img src={item.image} alt="" className='h-40 py-4 px-4' />
                     </Link>
                   </div>
                   <div className='px-2 py-4'>
-                    <Link>
+                    <Link to={`/products/${item.id}`}>
                       <h4 className='text-[14px] font-semibold font-jose text-neutral-950 hover:underline'>{item.title}</h4>
                     </Link>
                   </div>
                 </div>
               ))}
+            </div>
+            <div onClick={() => handleCate("men's clothing")}>
+              <h2 className='text-xl font-semibold font-jose text-white cursor-pointer hover:text-gray-300 pt-2 inline-block'>See More</h2>
             </div>
           </div>
         </div>

@@ -12,6 +12,8 @@ import ProductDetails from "./components/ProductDetails"
 import Cart from "./pages/Cart"
 import { ToastContainer } from "react-toastify"
 import Process from "./pages/Process"
+import MyAccount from "./pages/MyAccount"
+import WishList from "./pages/WishList"
 
 let routing = createBrowserRouter(createRoutesFromElements(
   <>
@@ -24,6 +26,8 @@ let routing = createBrowserRouter(createRoutesFromElements(
       <Route path="/blog" element={<Blog />}></Route>
       <Route path="/aboutus" element={<AboutUs />}></Route>
       <Route path="/contact" element={<Contact />}></Route>
+      <Route path="/myaccount" element={<MyAccount/>}></Route>
+      <Route path="/wishlist" element={<WishList/>}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/signup" element={<SignUp />}></Route>
     </Route>

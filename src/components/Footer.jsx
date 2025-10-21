@@ -13,10 +13,10 @@ const Footer = () => {
             We provide exclusive products with premium quality, fast delivery, and guaranteed customer satisfaction.
           </p>
           <div className="flex gap-4 mt-4">
-            <a href="#" className="hover:text-white"><FaFacebookF /></a>
-            <a href="#" className="hover:text-white"><FaTwitter /></a>
-            <a href="#" className="hover:text-white"><FaInstagram /></a>
-            <a href="#" className="hover:text-white"><FaLinkedinIn /></a>
+            <a  className="hover:text-white"><FaFacebookF /></a>
+            <a className="hover:text-white"><FaTwitter /></a>
+            <a className="hover:text-white"><FaInstagram /></a>
+            <a className="hover:text-white"><FaLinkedinIn /></a>
           </div>
         </div>
         <div className='md:w-30 mx-auto'>
@@ -40,9 +40,22 @@ const Footer = () => {
         </div>
         <div>
           <h3 className="text-white font-semibold mb-3">Contact Us</h3>
-          <p className="text-gray-400">01731-378743</p>
-          <p className="text-gray-400">mdshohagmia53200@gmail.com</p>
-          <p className="text-gray-400">Jamalpur Sadar, Mymensingh, Bangladesh</p>
+          <p className="text-gray-400 hover:underline">
+            <a href="tel:+8801731-378743" aria-label="Call Md Shohag Mia">01731-378743</a>
+          </p>
+          <p className="text-gray-400 hover:underline">
+            <a href="mailto:mdshohagmia53200@gmail.com" aria-label="Send email to Md Shohag Mia">mdshohagmia53200@gmail.com</a>
+          </p>
+            <p className="text-gray-400">
+              <a
+                href="https://www.google.com/maps/place/Jamalpur+Sadar,+Mymensingh,+Bangladesh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Jamalpur Sadar, Mymensingh, Bangladesh
+              </a>
+            </p>
         </div>
       </div>
       <div className="border-t-2 border-gray-800 mt-8 py-4 text-center text-gray-300 text-sm">

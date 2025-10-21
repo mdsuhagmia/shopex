@@ -53,12 +53,12 @@ const OurAllProducts = () => {
             {data.map((item)=>(
               <div className='px-2'>
                 <div key={item.id} className="bg-white rounded-[8px] shadow-xl mb-6 min-h-[320px]">
-                  <Link>
+                  <Link to={"/products"}>
                     <img src={item.image} alt={item.title}
                       className="w-full h-52 object-contain px-6 py-4 bg-gra-100 bg-gray-300 rounded-t-[5px]" />
                   </Link>
                   <div className="p-4 rounded-b-lg text-gray-950">
-                    <Link>
+                    <Link to={"/products"}>
                       <h3 className="text-sm font-semibold line-clamp-2 hover:underline">{item.title}</h3>
                     </Link>
                     <p className="mt-1 text-lg text-red-500 font-bold">${item.price}</p>

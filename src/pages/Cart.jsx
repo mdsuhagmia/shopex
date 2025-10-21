@@ -56,7 +56,7 @@ const Cart = () => {
                         <div className="flex items-center gap-3">
                           <button
                             onClick={() => dispatch(decrement(item))}
-                            className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer">
+                            className={`px-2 py-1 bg-gray-200 rounded   ${item.qun <= 1 ? "opacity-50 cursor-not-allowed" : "opacity-100 hover:bg-gray-300 cursor-pointer"}`}>
                             -
                           </button>
                           <span className="font-medium">{item.qun}</span>
